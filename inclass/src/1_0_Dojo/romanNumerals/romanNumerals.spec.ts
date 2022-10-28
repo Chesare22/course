@@ -29,4 +29,13 @@ describe('Testing roman numerals conversion', () => {
     expect(romanNumbers(input)).toBe(output)
   })
   
+  it.each([
+    generateRomanRelationship(4, 'IV'),    
+    generateRomanRelationship(29, 'XXIX'),
+    generateRomanRelationship(201, 'CCI'),
+    generateRomanRelationship(2049, 'MMXLIX'),
+    generateRomanRelationship(2999, 'MMCMXCIX'),
+  ])('Convert arabic numbers to roman numbers with substraction. $input should return $output', ({ input, output }) => {
+    expect(romanNumbers(input)).toBe(output)
+  })
 })
