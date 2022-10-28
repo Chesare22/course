@@ -18,4 +18,15 @@ describe('Testing roman numerals conversion', () => {
   ])('If the user enters $input, we expect the output to be $output', ({ input, output }) => {
     expect(romanNumbers(input)).toBe(output)
   })
+
+  it.each([
+    generateRomanRelationship(2, 'II'),    
+    generateRomanRelationship(30, 'XXX'),
+    generateRomanRelationship(200, 'CC'),
+    generateRomanRelationship(2000, 'MM'),
+    generateRomanRelationship(3000, 'MMM'),
+  ])('Convert arabic numbers to roman numbers with multiple instances of one numeral. $input should return $output', ({ input, output }) => {
+    expect(romanNumbers(input)).toBe(output)
+  })
+  
 })
